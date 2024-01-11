@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:law_code/Models/LocalModels/law_local_models.dart';
+import 'package:law_code/Screens/IndianConstitution/indian_cons.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -43,108 +45,131 @@ class _HomeState extends State<Home> {
 
 
 
-      body: Column(
+      body: ListView(
+
+
         children: [
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Container(
-              height: 13.h, width: 100.w,
 
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                  gradient: const LinearGradient(
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                    colors: [
-                      Color(0xF06E1112),
-                      Color(0xF0961C19),
-                    ],
-                  )
-              ),
+        Column(
+            children: [
 
-              child: Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Stack(
-                  children: [
-                   Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Known about' , style: GoogleFonts.poppins( fontSize: 12, color: Colors.white),),
-                        Text(""""The Indian Constitution" """ , style: GoogleFonts.poppins( fontSize: 20, color: Colors.white),),
-                      ],
+              SizedBox(height: 2.h,),
+
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: InkWell(
+                  onTap: (){
+                    Get.to(IndianCons(),
+                      transition: Transition.rightToLeftWithFade
+                    );
+                  },
+                  child: Container(
+                    height: 13.h, width: 100.w,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: const LinearGradient(
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                          colors: [
+                            Color(0xF06E1112),
+                            Color(0xF0961C19),
+                          ],
+                        )
                     ),
-                    Container(
-                      alignment: const Alignment(1,0),
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 15),
-                        child: Image.asset('images/arrowWhite.png', height: 4.h,),
-                      ))
-                  ],
 
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Stack(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('Known about' , style: GoogleFonts.poppins( fontSize: 12, color: Colors.white),),
+                              Text(""""The Indian Constitution" """ , style: GoogleFonts.poppins( fontSize: 20, color: Colors.white),),
+                            ],
+                          ),
+                          Container(
+                              alignment: const Alignment(1,0),
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 15),
+                                child: Image.asset('images/arrowWhite.png', height: 4.h,),
+                              ))
+                        ],
+
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
 
-     SizedBox(height: 0.5.h,),
+              SizedBox(height: 0.5.h,),
 
-          Padding(
-            padding: const EdgeInsets.only(left: 15.0 , right: 15.0),
-            child: Container(
-              alignment: const Alignment(0,0),
-              color: Colors.transparent,
-              height: 15.h, width: 100.w,
-              child: GridView.builder(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-              
-                  itemCount: 4,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4, mainAxisSpacing: 12, crossAxisSpacing: 12
-              ), itemBuilder: (context, index ){
-                return Container(
-                  decoration: BoxDecoration(
-                      color: const Color(0xF06E1112),
-                    borderRadius: BorderRadius.circular(10)
-                  ),
-                  height: 20.h, width: 20.h,
-
-                );
-              }),
-            ),
-          ),
-          SizedBox(height: 5.h,),
-          Text('Knowns your laws' , style: GoogleFonts.poppins(color: Colors.white),),
-          Container(
-            color: Colors.transparent,
-            width: 100.w,
-            height: 40.h,
-            
-            child: ListView.builder(
-                itemCount: 4,
-                itemBuilder: (context,index){
-              LawModels lm = laws[index];
-              return Padding(
-                padding: const EdgeInsets.only(left: 15.0 , right: 15.0, bottom: 8, top: 8),
+              Padding(
+                padding: const EdgeInsets.only(left: 15.0 , right: 15.0),
                 child: Container(
+                  alignment: const Alignment(0,0),
+                  color: Colors.transparent,
+                  height: 15.h, width: 100.w,
+                  child: GridView.builder(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
 
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                    borderRadius: BorderRadius.circular(10)
-                  ),
-                  child: ListTile(
-                    leading: Image.asset(lm.img.toString()),
-                    title: Text(lm.text.toString(), style: GoogleFonts.poppins(fontWeight: FontWeight.bold),),
-                    trailing: Image.asset(lm.icons.toString(), height: 4.h,),
-                  ),
+                      itemCount: 4,
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 1, mainAxisSpacing: 12, crossAxisSpacing: 12
+                      ), itemBuilder: (context, index ){
+                    return Container(
+                      decoration: BoxDecoration(
+                          color: const Color(0xF06E1112),
+                          borderRadius: BorderRadius.circular(10)
+                      ),
+                      height: 20.h, width: 20.h,
+
+                    );
+                  }),
                 ),
-              );
-            }),
-          
-          )
+              ),
+            SizedBox(height: 2.8.h,),
+              Text('Knowns your laws' , style: GoogleFonts.poppins(color: Colors.white),),
+
+              Container(
+                color: Colors.transparent,
+                width: 100.w,
+                height: 40.h,
+
+                child: ListView.builder(
+                    itemCount: 4,
+                    itemBuilder: (context,index){
+                      LawModels lm = laws[index];
+                      return Padding(
+                        padding: const EdgeInsets.only(left: 15.0 , right: 15.0, bottom: 8, top: 8),
+                        child: Container(
+
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)
+                          ),
+                          child: ListTile(
+                            leading: Image.asset(lm.img.toString()),
+                            title: Text(lm.text.toString(), style: GoogleFonts.poppins(fontWeight: FontWeight.bold),),
+                            trailing: Image.asset(lm.icons.toString(), height: 4.h,),
+                          ),
+                        ),
+                      );
+                    }),
+
+              )
+
+            ],
+          ),
 
         ],
+
+
+
+
+
       ),
 
 
