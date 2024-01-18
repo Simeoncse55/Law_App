@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:law_code/Models/LocalModels/law_local_models.dart';
+import 'package:get/get.dart';
+import 'package:law_code/Screens/IndianConstitution/indian_cons.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -47,41 +49,46 @@ class _HomeState extends State<Home> {
         children: [
           Padding(
             padding: const EdgeInsets.all(15.0),
-            child: Container(
-              height: 13.h, width: 100.w,
+            child: InkWell(
+              onTap: (){
+                Get.to(IndianCons());
+              },
+              child: Container(
+                height: 13.h, width: 100.w,
 
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                  gradient: const LinearGradient(
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                    colors: [
-                      Color(0xF06E1112),
-                      Color(0xF0961C19),
-                    ],
-                  )
-              ),
-
-              child: Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Stack(
-                  children: [
-                   Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Known about' , style: GoogleFonts.poppins( fontSize: 12, color: Colors.white),),
-                        Text(""""The Indian Constitution" """ , style: GoogleFonts.poppins( fontSize: 20, color: Colors.white),),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                    gradient: const LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [
+                        Color(0xF06E1112),
+                        Color(0xF0961C19),
                       ],
-                    ),
-                    Container(
-                      alignment: const Alignment(1,0),
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 15),
-                        child: Image.asset('images/arrowWhite.png', height: 4.h,),
-                      ))
-                  ],
+                    )
+                ),
 
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Stack(
+                    children: [
+                     Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Known about' , style: GoogleFonts.poppins( fontSize: 12, color: Colors.white),),
+                          Text(""""The Indian Constitution" """ , style: GoogleFonts.poppins( fontSize: 20, color: Colors.white),),
+                        ],
+                      ),
+                      Container(
+                        alignment: const Alignment(1,0),
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 15),
+                          child: Image.asset('images/arrowWhite.png', height: 4.h,),
+                        ))
+                    ],
+
+                  ),
                 ),
               ),
             ),
@@ -96,12 +103,12 @@ class _HomeState extends State<Home> {
               color: Colors.transparent,
               height: 15.h, width: 100.w,
               child: GridView.builder(
-                scrollDirection: Axis.vertical,
+                scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
               
                   itemCount: 4,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4, mainAxisSpacing: 12, crossAxisSpacing: 12
+                crossAxisCount: 1, mainAxisSpacing: 12, crossAxisSpacing: 12
               ), itemBuilder: (context, index ){
                 return Container(
                   decoration: BoxDecoration(
