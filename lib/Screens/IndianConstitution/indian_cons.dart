@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:law_code/Screens/IndianConstitution/IndCons_pages/shedules.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:law_code/Models/LocalModels/ind_cons_txts.dart';
-
+import 'package:law_code/Screens/IndianConstitution/indian_cons.dart';
 import 'IndCons_pages/preamble_cons.dart';
+import 'package:law_code/Screens/IndianConstitution/IndCons_pages/parts.dart';
+
 class IndianCons extends StatefulWidget {
   const IndianCons({Key? key}) : super(key: key);
 
@@ -136,40 +139,46 @@ class _IndianConsState extends State<IndianCons> {
                   padding: const EdgeInsets.all(8.0),
                   child: Stack(
                     children: [
-                      Container(
-                        height: 6.h,
-                        width: 100.w,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            gradient: const LinearGradient(
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.topCenter,
-                              colors: [
-                                Color(0xF06E1112),
-                                Color(0xF0961C19),
-                              ],
-                            )
-                        ),
-                        child: Stack(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Center(child: Text('Preamble of the Constitution' , style: GoogleFonts.poppins( fontSize: 16, color: Colors.white),)),
-                              ],
-                            ),
-                            Container(
-                                alignment: const Alignment(1,0),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(right: 15),
-                                  child: Image.asset('images/arrowWhite.png', height: 3.5.h,),
-                                )
-                            )
-                          ],
+                      InkWell(
+                        onTap: (){
+                          Get.to(Shedules_Cons(),
+                          transition: Transition.rightToLeftWithFade);
+                        },
+                        child: Container(
+                          height: 6.h,
+                          width: 100.w,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              gradient: const LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.topCenter,
+                                colors: [
+                                  Color(0xF06E1112),
+                                  Color(0xF0961C19),
+                                ],
+                              )
+                          ),
+                          child: Stack(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Center(child: Text('Schedules of the Constitution' , style: GoogleFonts.poppins( fontSize: 16, color: Colors.white),)),
+                                ],
+                              ),
+                              Container(
+                                  alignment: const Alignment(1,0),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 15),
+                                    child: Image.asset('images/arrowWhite.png', height: 3.5.h,),
+                                  )
+                              )
+                            ],
+
+                          ),
 
                         ),
-
                       ),
 
                     ],
@@ -181,40 +190,46 @@ class _IndianConsState extends State<IndianCons> {
                   padding: const EdgeInsets.all(8.0),
                   child: Stack(
                     children: [
-                      Container(
-                        height: 6.h,
-                        width: 100.w,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            gradient: const LinearGradient(
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.topCenter,
-                              colors: [
-                                Color(0xF06E1112),
-                                Color(0xF0961C19),
-                              ],
-                            )
-                        ),
-                        child: Stack(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Center(child: Text('Preamble of the Constitution' , style: GoogleFonts.poppins( fontSize: 16, color: Colors.white),)),
-                              ],
-                            ),
-                            Container(
-                                alignment: const Alignment(1,0),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(right: 15),
-                                  child: Image.asset('images/arrowWhite.png', height: 3.5.h,),
-                                )
-                            )
-                          ],
+                      InkWell(
+                        onTap:(){
+                  Get.to(Parts(),
+                  transition: Transition.rightToLeftWithFade);
+                },
+                        child: Container(
+                          height: 6.h,
+                          width: 100.w,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              gradient: const LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.topCenter,
+                                colors: [
+                                  Color(0xF06E1112),
+                                  Color(0xF0961C19),
+                                ],
+                              )
+                          ),
+                          child: Stack(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Center(child: Text('Preamble of the Constitution' , style: GoogleFonts.poppins( fontSize: 16, color: Colors.white),)),
+                                ],
+                              ),
+                              Container(
+                                  alignment: const Alignment(1,0),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 15),
+                                    child: Image.asset('images/arrowWhite.png', height: 3.5.h,),
+                                  )
+                              )
+                            ],
+
+                          ),
 
                         ),
-
                       ),
 
                     ],
