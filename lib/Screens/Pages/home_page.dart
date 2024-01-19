@@ -79,7 +79,7 @@ class _HomeState extends State<Home> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text('Known about' , style: GoogleFonts.poppins( fontSize: 12, color: Colors.white),),
-                            Text(""""The Indian Constitution" """ , style: GoogleFonts.poppins( fontSize: 20, color: Colors.white),),
+                            Text(""""The Indian Constitution" """ , style: GoogleFonts.poppins( fontSize: 20, color: Colors.white, fontWeight: FontWeight.w500),),
                           ],
                         ),
                         Container(
@@ -108,7 +108,7 @@ class _HomeState extends State<Home> {
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
                 
-                    itemCount: 4,
+                    itemCount: 20,
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 1, mainAxisSpacing: 12, crossAxisSpacing: 12
                 ), itemBuilder: (context, index ){

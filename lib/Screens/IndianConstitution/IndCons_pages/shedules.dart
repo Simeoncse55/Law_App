@@ -24,7 +24,7 @@ class _Shedules_ConsState extends State<Shedules_Cons> {
             },
             child: Icon(Icons.arrow_back_ios)),
         title: Text('Schedules of the Constitution' , style: GoogleFonts.poppins(
-          color: Colors.white, fontWeight: FontWeight.bold
+          color: Colors.white, fontWeight: FontWeight.bold , fontSize: 18
         ),),
         centerTitle: true,
       ),
