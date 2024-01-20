@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:numerus/numerus.dart';
 import 'package:law_code/Screens/IndianConstitution/IndCons_pages/parts_articles_page.dart';
-
+import 'package:law_code/Models/LocalModels/part_and_article_model.dart';
 class Parts extends StatefulWidget {
   const Parts({super.key});
 
@@ -13,6 +13,8 @@ class Parts extends StatefulWidget {
 }
 
 class _PartsState extends State<Parts> {
+  var num;
+
   @override
   Widget build(BuildContext context) {
 
@@ -31,14 +33,19 @@ class _PartsState extends State<Parts> {
 
 
       body: ListView.builder(
-          itemCount: 30,
+          itemCount: partsArticles.length,
           itemBuilder: (context , index){
-          var num = index;
+            PartsModel pm =  partsArticles[index];
+
+
+            num = index;
+
+
          return Padding(
            padding: const EdgeInsets.all(10.0),
            child: InkWell(
              onTap: (){
-               Get.to(PartsArticle());
+               Get.to(PartsArticle(partsModel :pm) , transition: Transition.rightToLeftWithFade , arguments: index);
              },
              child: Container(
                height: 8.h, width: 100.w,

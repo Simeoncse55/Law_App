@@ -16,10 +16,10 @@ class _DashBoardPageState extends State<DashBoardPage> {
   int _selectedIndex =0;
   static const List<Widget> _widgetOptions =<Widget> [
     Home(),
-    Text('werty'),
-    Text('asdfg'),
-    Text('zxcv'),
-    Text('qwersdf'),
+    Text('VIDEO PAGE'),
+    Text('SEARCH PAGE'),
+    Text('SAVE PAGE'),
+    Text('SETTINGS'),
     
   ];
 
