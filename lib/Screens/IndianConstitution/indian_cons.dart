@@ -215,7 +215,7 @@ class _IndianConsState extends State<IndianCons> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Center(child: Text('Preamble of the Constitution' , style: GoogleFonts.poppins( fontSize: 16, color: Colors.white),)),
+                                  Center(child: Text('Parts and Articles of the Constitution' , style: GoogleFonts.poppins( fontSize: 13.5, color: Colors.white),)),
                                 ],
                               ),
                               Container(
@@ -239,7 +239,6 @@ class _IndianConsState extends State<IndianCons> {
             ),
 
           ],
-
 
         ),
       ),

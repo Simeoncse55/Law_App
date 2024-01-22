@@ -3,14 +3,43 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:law_code/Models/LocalModels/part_and_article_model.dart';
-class PartsArticle extends StatelessWidget {
-  PartsArticle({ required this.partsModel, super.key});
+class PartsArticle extends StatefulWidget {
+  PartsArticle({ required this.partsModel, this.index=0, super.key});
 
   final PartsModel partsModel;
-
+  final int index;
 
   @override
+  State<PartsArticle> createState() => _PartsArticleState();
+}
+
+class _PartsArticleState extends State<PartsArticle> {
+  @override
   Widget build(BuildContext context) {
+    int currentIndex=0;
+
+    @override
+    void initState() {
+      super.initState();
+      // Add code after super
+      currentIndex = widget.index;
+      setState(() {});
+
+    }
+    void incrementIndex(){
+      currentIndex++;
+      setState(() {
+
+      });
+    }
+
+    void decrementIndex(){
+      currentIndex--;
+      setState(() {
+
+      });
+    }
+
     return Scaffold(
 
       backgroundColor: Colors.black,
@@ -39,18 +68,20 @@ class PartsArticle extends StatelessWidget {
              children: [
                Padding(
                  padding: const EdgeInsets.only(top: 10.0),
-                 child: Text( partsModel.tittle.toString(), style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 20),),
+                 // tittle text
+                 child: Text( widget.partsModel.tittle.toString(), style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 20),),
                ),
                Padding(
                  padding: const EdgeInsets.only(top : 8.0),
                  child: Row(
                    children: [
                      Container(
-                       color: Colors.amber,
+                       // color: Colors.amber,
                        width: 88.w,
                        child: Padding(
+                         // points text
                          padding: const EdgeInsets.only(left:8.0),
-                         child: Text(partsModel.points.toString() , style: GoogleFonts.poppins(
+                         child: Text(widget.partsModel.points.toString() , style: GoogleFonts.poppins(
                            fontSize: 15.sp,
                          ),),
                        ),
@@ -78,17 +109,22 @@ class PartsArticle extends StatelessWidget {
                 ListView.builder(
                   itemCount: 50,
                     itemBuilder: (context,index){
+
                   return Container(
                     color: Color(0xF0811716),
-                    child: ListTile(
-                      title: Text('head $index', style: GoogleFonts.poppins(color: Colors.white),),
-                      subtitle:Text('subtittle $index', style: GoogleFonts.poppins(color: Colors.white),),
+                    child: InkWell(
+
+                      child: ListTile(
+                        title: Text('head $index', style: GoogleFonts.poppins(color: Colors.white),),
+                        subtitle:Text('subtittle $index', style: GoogleFonts.poppins(color: Colors.white),),
+                      ),
                     ),
                   );
                 })
               );
             },
 
+            // first container
             child: Container(
               height: 4.5.h, width: 20.w,
               decoration: BoxDecoration(
@@ -101,33 +137,34 @@ class PartsArticle extends StatelessWidget {
             ),
           ),
 
+
           // second container
           Container(
               height: 7.h, width: double.infinity,
               decoration: BoxDecoration(
                   // borderRadius: BorderRadius.circular(50),
                   color: Color(0xF0811716)
-                  // gradient: const LinearGradient(
-                  //   begin: Alignment.bottomCenter,
-                  //   end: Alignment.topCenter,
-                  //   colors: [
-                  //     Color(0xF06E1112),
-                  //     Color(0xF0961C19),
-                  //   ],
-                  // )
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
-                    child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios,color: Colors.white,)),
+                    child: IconButton(onPressed: (){
+                      // decrement index method
+                      decrementIndex();
+                    }, icon: Icon(Icons.arrow_back_ios,color: Colors.white,)),
                   ),
                   Text('num'),
 
                   Padding(
                     padding: const EdgeInsets.only(right: 15),
-                    child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward_ios,color: Colors.white)),
+                    child: IconButton(onPressed: (){
+                      //increment index method
+                      incrementIndex();
+
+
+                    }, icon: Icon(Icons.arrow_forward_ios,color: Colors.white)),
                   )
                 ],
               ),
