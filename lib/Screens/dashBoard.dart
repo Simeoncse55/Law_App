@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+
+import 'Pages/VideoPageMaterials/video_page.dart';
 import 'Pages/home_page.dart';
-import 'Pages/videos_page.dart';
+
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:google_fonts/google_fonts.dart';
 class DashBoardPage extends StatefulWidget {
@@ -16,7 +18,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
   int _selectedIndex =0;
   static const List<Widget> _widgetOptions =<Widget> [
     Home(),
-    Text('VIDEO PAGE'),
+    VideoPage(),
     Text('SEARCH PAGE'),
     Text('SAVE PAGE'),
     Text('SETTINGS'),

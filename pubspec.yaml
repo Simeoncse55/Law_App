@@ -43,6 +43,10 @@ dependencies:
   google_nav_bar: ^5.0.6
   google_fonts: ^6.1.0
   numerus: ^2.2.0
+  expandable_text: ^2.3.0
+  video_player: ^2.8.2
+  chewie: ^1.7.4
+  like_button: ^2.0.5
 
 dev_dependencies:
   flutter_test:
