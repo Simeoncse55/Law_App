@@ -8,31 +8,36 @@ class VideoContentBar extends StatelessWidget {
   final Reel reel;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // height: 18.h, color: Colors.pink,
-      child: Column(
+    return Stack(
+    children: [
 
-        children: [
-          ListTile(
-            title: Text('${reel.videoTittle.toString()}', style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.w500,fontSize: 20),),
+    Container(
+        // height: 18.h, color: Colors.pink,
+        child: Column(
 
-            subtitle: Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              child: ExpandableText(
-                reel.videoContent.toString(),
-                style: GoogleFonts.poppins(color: Colors.white),
+          children: [
+            ListTile(
+                title: Text('${reel.videoTittle.toString()}', style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.w500,fontSize: 20),),
 
-                expandText: 'Read more',
-                collapseText: 'show less',
-                collapseOnTextTap: true,
-                expandOnTextTap: true,
-                maxLines: 3,
-                linkColor: Colors.grey,
-              ),
+                subtitle: Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: ExpandableText(
+                    reel.videoContent.toString(),
+                    style: GoogleFonts.poppins(color: Colors.white),
+
+                    expandText: 'Read more',
+                    collapseText: 'show less',
+                    collapseOnTextTap: true,
+                    expandOnTextTap: true,
+                    maxLines: 3,
+                    linkColor: Colors.grey,
+                  ),
+                )
             )
-          )
-        ],
+          ],
+        ),
       ),
+    ],
     );
   }
 }
